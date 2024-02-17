@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nijat-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nijat-app
+  template:
+    metadata:
+      labels:
+        app: nijat-app
+    spec:
+      containers:
+      - name: nijat-app
+        image: pifaqorik/kuber-project
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
