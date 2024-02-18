@@ -1,8 +1,10 @@
 ---
-hosts: all
-become: true
-tasks:
-  - name: create a deployment
-    command: kube apply -f /root/Deployment.yml
-  - name: create a service
-    command: kube apply -f /root/Service.yml
+- name: Deploy to Kubernetes
+  hosts: all
+  become: true
+  tasks:
+    - name: Create a deployment
+      command: kubectl apply -f /root/Deployment.yml
+
+    - name: Create a service
+      command: kubectl apply -f /root/Service.yml
