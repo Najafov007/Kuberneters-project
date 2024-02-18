@@ -4,7 +4,7 @@
   become: true
   tasks:
     - name: Create a deployment
-      command: kubectl apply -f /root/Deployment.yml
+      command: /root/kubectl apply -f /root/Deployment.yml
 
     - name: Create a service
-      command: kubectl apply -f /root/Service.yml
+      command: /root/kubectl apply -f /root/Service.yml
